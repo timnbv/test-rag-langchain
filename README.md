@@ -10,4 +10,8 @@ $ pip install -r requirements.txt
 
 2. Install Ollama, and pull "llama3" and "nomic-embed-text" models
 
-3. Create a `.env` file with the following variables with:
+3. Run the command
+
+```bash
+$ python app_cmd.py
+```
