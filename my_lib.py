@@ -13,7 +13,7 @@ def create_db(db_directory, from_file_path):
         print(f"*****Finished creating database {db_directory}*******")
 
 
-def ask_llm(question, model="llama3", emb_model="nomic-embed-text"):
+def ask_llm(question, model="llama3", emb_model="nomic-embed-text", stream=False):
     from langchain.prompts import ChatPromptTemplate
     from langchain_community.llms import Ollama
     from langchain_core.runnables import RunnablePassthrough
@@ -50,4 +50,7 @@ def ask_llm(question, model="llama3", emb_model="nomic-embed-text"):
         | parser
 
     )
-    return chain.invoke(question)
+    if stream:
+        return chain.stream(question)
+    else:
+        return chain.invoke(question)
