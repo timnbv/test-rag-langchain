@@ -15,3 +15,9 @@ $ pip install -r requirements.txt
 ```bash
 $ python app_cmd.py
 ```
+
+or
+
+```bash
+$ python app_web.py
+```
